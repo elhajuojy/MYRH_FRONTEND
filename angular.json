@@ -17,6 +17,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
+              "node_modules/bootstrap/dist/js/bootstrap.js",
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
@@ -25,6 +26,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
             "scripts": []
