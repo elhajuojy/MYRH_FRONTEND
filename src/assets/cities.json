@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Casablanca",
+    "population": 3359818,
+    "latitude": 33.5731,
+    "longitude": -7.5898
+  },
+  {
+    "name": "Rabat",
+    "population": 577827,
+    "latitude": 34.0209,
+    "longitude": -6.8417
+  },
+  {
+    "name": "Marrakech",
+    "population": 928850,
+    "latitude": 31.6295,
+    "longitude": -7.9811
+  },
+  {
+    "name": "Fes",
+    "population": 1112072,
+    "latitude": 34.0181,
+    "longitude": -5.0076
+  },
+  {
+    "name": "Tangier",
+    "population": 974921,
+    "latitude": 35.7796,
+    "longitude": -5.8136
+  },
+  {
+    "name": "Agadir",
+    "population": 609088,
+    "latitude": 30.4220,
+    "longitude": -9.5595
+  },
+  {
+    "name": "Meknes",
+    "population": 632079,
+    "latitude": 33.8869,
+    "longitude": -5.5150
+  },
+  {
+    "name": "Oujda",
+    "population": 551767,
+    "latitude": 34.6814,
+    "longitude": -1.9076
+  },
+  {
+    "name": "Kenitra",
+    "population": 431282,
+    "latitude": 34.2610,
+    "longitude": -6.5802
+  },
+  {
+    "name": "Tetouan",
+    "population": 380787,
+    "latitude": 35.5676,
+    "longitude": -5.3684
+  },
+  {
+    "name": "El Jadida",
+    "population": 198325,
+    "latitude": 33.2326,
+    "longitude": -8.5014
+  },
+  {
+    "name": "Nador",
+    "population": 161726,
+    "latitude": 35.1740,
+    "longitude": -2.9283
+  },
+  {
+    "name": "Settat",
+    "population": 142250,
+    "latitude": 33.0029,
+    "longitude": -7.6160
+  },
+  {
+    "name": "Khouribga",
+    "population": 196196,
+    "latitude": 32.8842,
+    "longitude": -6.9060
+  },
+  {
+    "name": "Beni Mellal",
+    "population": 192676,
+    "latitude": 32.3370,
+    "longitude": -6.3566
+  },
+  {
+    "name": "Taza",
+    "population": 160745,
+    "latitude": 34.2190,
+    "longitude": -4.0114
+  },
+  {
+    "name": "Larache",
+    "population": 159987,
+    "latitude": 35.1789,
+    "longitude": -5.2632
+  },
+  {
+    "name": "Ksar El Kebir",
+    "population": 130082,
+    "latitude": 35.0049,
+    "longitude": -5.9096
+  },
+  {
+    "name": "Guelmim",
+    "population": 118907,
+    "latitude": 28.9800,
+    "longitude": -10.0578
+  },
+  {
+    "name": "Berrechid",
+    "population": 130458,
+    "latitude": 33.2676,
+    "longitude": -7.5816
+  },
+  {
+    "name": "Ouarzazate",
+    "population": 141918,
+    "latitude": 30.9336,
+    "longitude": -6.9376
+  },
+  {
+    "name": "Taourirt",
+    "population": 123582,
+    "latitude": 34.4120,
+    "longitude": -2.5063
+  },
+  {
+    "name": "Safi",
+    "population": 308508,
+    "latitude": 32.2995,
+    "longitude": -9.2375
+  },
+  {
+    "name": "Taroudant",
+    "population": 86251,
+    "latitude": 30.4711,
+    "longitude": -8.8744
+  },
+  {
+    "name": "Essaouira",
+    "population": 79865,
+    "latitude": 31.5085,
+    "longitude": -9.7595
+  },
+  {
+    "name": "Al Hoceima",
+    "population": 159991,
+    "latitude": 35.2468,
+    "longitude": -3.9374
+  },
+  {
+    "name": "Dakhla",
+    "population": 124590,
+    "latitude": 23.7143,
+    "longitude": -15.9361
+  },
+  {
+    "name": "El Aaiun",
+    "population": 196331,
+    "latitude": 27.1532,
+    "longitude": -13.2032
+  },
+  {
+    "name": "Tiznit",
+    "population": 76278,
+    "latitude": 29.6965,
+    "longitude": -9.7346
+  },
+  {
+    "name": "Tan-Tan",
+    "population": 73935,
+    "latitude": 28.4389,
+    "longitude": -11.1037
+  }
+]

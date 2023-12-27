@@ -5,16 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import {SearchbarComponent} from "./shared/search-bar/searchbar.component";
+import { JobOfferCardComponent } from './shared/job-offer-card/job-offer-card.component';
+import { JobOffersComponent } from './features/job-offers/job-offers.component';
+import { JobOfferLayoutComponent } from './layout/job-offer-layout/job-offer-layout.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchbarComponent,
+    JobOfferCardComponent,
+    JobOffersComponent,
+    JobOfferLayoutComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [
