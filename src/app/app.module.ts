@@ -10,6 +10,7 @@ import { JobOfferCardComponent } from './shared/job-offer-card/job-offer-card.co
 import { JobOffersComponent } from './features/job-offers/job-offers.component';
 import { JobOfferLayoutComponent } from './layout/job-offer-layout/job-offer-layout.component';
 import {FormsModule} from "@angular/forms";
+import { JobOfferDetailComponent } from './features/job-offer-detail/job-offer-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormsModule} from "@angular/forms";
     SearchbarComponent,
     JobOfferCardComponent,
     JobOffersComponent,
-    JobOfferLayoutComponent
+    JobOfferLayoutComponent,
+    JobOfferDetailComponent
   ],
   imports: [
     BrowserModule,
