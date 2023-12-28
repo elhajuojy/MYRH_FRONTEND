@@ -1,0 +1,36 @@
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <!-- Replace the URL with the path to your company logo -->
+        <img class="rounded" src="https://t3.ftcdn.net/jpg/01/68/25/74/360_F_168257463_h8xJ4uxV2dT5biEkiGJGTLNYiScSD6sl.jpg" alt="Company Logo" height="30">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home"><span class="sr-only">{{ current }}</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#jobs">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <a type="button" href="#add-job-offer" class="btn btn-sm btn-primary">Add Job Offer</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <ng-content select="comapny-content">
+
+  </ng-content>
+
+
