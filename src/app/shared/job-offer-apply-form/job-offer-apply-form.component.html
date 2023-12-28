@@ -1,0 +1,50 @@
+
+<form (ngSubmit)="handleApplaySubmit($event)">
+
+    <div class="row gap-3 ">
+      <div class="mb-3 col">
+        <label for="prenom" class="form-label">Prenom <span class="text-danger">*</span></label>
+        <input class="form-control form-control-lg" id="prenom" type="text" placeholder="prenom" aria-label=".form-control-lg example">
+      </div>
+      <div class="col">
+        <label for="nom" class="form-label">nom  <span class="text-danger">*</span></label>
+        <input type="text" id="nom" class="form-control form-control-lg" placeholder="nom">
+      </div>
+    </div>
+    <div class="row gap-3 ">
+      <div class="mb-3 col">
+        <label for="email" class="form-label">email <span class="text-danger">*</span></label>
+        <input class="form-control form-control-lg" id="email" type="email" required placeholder="email" aria-label=".form-control-lg example">
+      </div>
+      <div class="col">
+        <label for="phone" class="form-label">phone  <span class="text-danger">*</span></label>
+        <input type="number" required id="phone" class="form-control form-control-lg" placeholder="phone number">
+      </div>
+    </div>
+    <div class="row gap-3 ">
+      <div class="mb-3 col">
+        <label for="location" class="form-label">location <span class="text-danger">*</span></label>
+        <input class="form-control form-control-lg" id="location" type="text" required placeholder="email" aria-label=".form-control-lg example">
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupFile01">Upload</label>
+      <input type="file" class="form-control" id="inputGroupFile01">
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">With textarea</span>
+      <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+
+
+
+    <div class="my-4">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" >
+        <label class="form-check-label" for="disabledFieldsetCheck">
+          Can't check this
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
