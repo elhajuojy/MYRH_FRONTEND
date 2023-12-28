@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-job-offer-card',
@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class JobOfferCardComponent {
 
+  @Input() showAdminOptions:boolean = false;
+
+  deleteJobOffer() {
+
+  }
+
+  editJobOffer() {
+
+  }
+
+  showJobOffer() {
+
+  }
 }

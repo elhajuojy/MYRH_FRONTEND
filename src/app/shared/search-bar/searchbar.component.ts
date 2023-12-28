@@ -11,12 +11,9 @@ export class SearchbarComponent {
   cities:Array<any>  = (citiesData as any).default;
 
   constructor() {
-    console.log('cities', this.cities)
-    console.log(typeof this.cities )
   }
 
 
   handleSearch() {
-    console.log('handleSearch')
   }
 }

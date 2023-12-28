@@ -1,5 +1,8 @@
 
-<div class="container row gap-3  my-4 p-4">
+<app-job-offer-layouts>
+
+
+<div job-offer-content class="container row gap-3  my-4 p-4">
     <div class="card " style="max-width: 70%">
       <a class="text-dark" href="#">
           <p class="m-4 text-end ">Annonce suivante
@@ -59,9 +62,9 @@
         </div>
     </div>
     <div class="col ">
-      <button type="button" class="btn btn-lg my-1 w-100 btn-danger">
+      <a [routerLink]="['apply']"  type="button" class="btn btn-lg my-1 w-100 btn-danger">
           Je suis intéressé(e)
-      </button>
+      </a>
       <button type="button" class="btn btn-lg my-1 d-flex align-items-center w-100 btn-outline-primary">
           Recommander un(e) ami(e)
       </button>
@@ -85,3 +88,4 @@
       </div>
     </div>
 </div>
+</app-job-offer-layouts>
