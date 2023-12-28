@@ -8,9 +8,12 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import {SearchbarComponent} from "./shared/search-bar/searchbar.component";
 import { JobOfferCardComponent } from './shared/job-offer-card/job-offer-card.component';
 import { JobOffersComponent } from './features/job-offers/job-offers.component';
-import { JobOfferLayoutComponent } from './layout/job-offer-layout/job-offer-layout.component';
+import { JobOfferLayoutComponent } from './layouts/job-offer-layout/job-offer-layout.component';
 import {FormsModule} from "@angular/forms";
 import { JobOfferDetailComponent } from './features/job-offer-detail/job-offer-detail.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { JobOfferDetailComponent } from './features/job-offer-detail/job-offer-d
     JobOfferCardComponent,
     JobOffersComponent,
     JobOfferLayoutComponent,
-    JobOfferDetailComponent
+    JobOfferDetailComponent,
+    AdminLayoutComponent,
+    AuthLayoutComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
