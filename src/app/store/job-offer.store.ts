@@ -1,7 +1,6 @@
 import {ComponentStore, tapResponse} from "@ngrx/component-store";
 import {JobOfferService} from "../service/job-offer.service";
 import {Injectable} from "@angular/core";
-import {exhaustMap, Observable, tap} from "rxjs";
 import {HttpErrorResponse} from "@angular/common/http";
 
 
@@ -11,7 +10,9 @@ export interface  JobOffersComponentsState{
   offers: any[];
 }
 
-@Injectable()
+@Injectable(
+  {providedIn:"root"}
+)
 export class JobOffersStore extends ComponentStore<JobOffersComponentsState>{
   private _isLoading$ = this.select((state)=>state.isLoading)
   private _nbrOffers$ = this.select((state)=>state.nbrOffers)

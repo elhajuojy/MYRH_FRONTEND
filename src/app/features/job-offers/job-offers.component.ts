@@ -5,9 +5,6 @@ import {JobOffersStore} from "../../store/job-offer.store";
   selector: 'app-job-offers',
   templateUrl: './job-offers.component.html',
   styleUrls: ['./job-offers.component.css'],
-  providers:[
-    JobOffersStore
-  ]
 })
 export class JobOffersComponent  implements OnInit{
   number_offer:number =  12200;

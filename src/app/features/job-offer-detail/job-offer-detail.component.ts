@@ -5,9 +5,6 @@ import {JobOffersStore} from "../../store/job-offer.store";
   selector: 'app-job-offer-detail',
   templateUrl: './job-offer-detail.component.html',
   styleUrls: ['./job-offer-detail.component.css'],
-  providers:[
-    JobOffersStore
-  ]
 })
 export class JobOfferDetailComponent implements  OnInit{
   vm$ = this.jobOfferStore.vim$
