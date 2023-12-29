@@ -15,7 +15,9 @@ export class JobOffersComponent  implements OnInit{
 
   ngOnInit(): void {
         // this.jobOfferStore.getNbrOffers();
-    }
+
+  }
+
 
   addMoreOfferJobsNbr() {
     this.jobOfferStore.addNberOfJobOffers();
