@@ -6,14 +6,14 @@
     <div class="mt-2">
       <div class="my-3">
         <h4>Emploi / Offres emploi</h4>
-        <p>Vous consultez les {{ number_offer }} annonces Emploi dont 15 366 d'Offres emploi</p>
+        <p>Vous consultez les 1200 annonces Emploi dont 15 366 d'Offres emploi</p>
       </div>
       <!--  <button (click)="addMoreOfferJobsNbr()" class="btn btn-sm btn-light">-->
       <!--    add more nbr offers-->
       <!--  </button>-->
       <div id="job-offers" class="d-grid gap-3">
-        <app-job-offer-card *ngFor="let i of [1,2,3]"
-        [number]="i"
+        <app-job-offer-card *ngFor="let jobOffer of jobOffers"
+        [jobOffer]="jobOffer"
         ></app-job-offer-card>
         <app-pagination></app-pagination>
       </div>

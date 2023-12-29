@@ -14,25 +14,26 @@
 
 
   <div
-    [routerLink]="['/job-offers', number]"
+    [routerLink]="['/job-offers', jobOffer.id]"
     role="button"
     class="w-100 border rounded   d-flex gap-3 ">
     <div class="w-25 h-25 my-auto" style="max-width: 120px ; margin-left: 20px">
       <img class=" rounded w-100 " src="https://media.licdn.com/dms/image/D4E0BAQEa77mGYDsWTQ/company-logo_200_200/0/1699965210072/ux4mation_logo?e=2147483647&v=beta&t=h4COg8bmVGITgHED44flsBmo2xwP0CcouzZqXrC5f9M" alt="ux4mation">
     </div>
-    <div class="wx-auto my-3">
+    <div *ngIf="jobOffer" class="wx-auto my-3">
       <div class="" style="margin: 0; padding: 0">
-            <h6><b class="">{{number}} Ux4mation </b></h6>
-            <p  class="text-sm-start m-1">ux4mation</p>
-            <p class="m-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptate.</p>
-            <p class="m-1">salary: {{ 1000 }}</p>
-            <p class="m-1">location: {{ 'location' }}</p>
+            <h6><b class="">{{jobOffer.title}} </b></h6>
+            <p  class="text-sm-start m-1">{{jobOffer.location}}</p>
+            <p class="m-1">{{jobOffer.description}}</p>
+            <p class="m-1">salary: {{ jobOffer.salary }}</p>
+            <p class="m-1">contract: {{ jobOffer.contract }}</p>
+            <p class="m-1">location: {{ jobOffer.location }}</p>
             <a href="#" class="btn btn-light btn-sm">Read More</a>
       </div>
       <div *ngIf="showAdminOptions" class="d-flex gap-3 mt-4 ">
-        <button class="btn btn-danger btn-sm" (click)="deleteJobOffer()">Delete</button>
-        <button class="btn btn-warning btn-sm" (click)="editJobOffer()">Edit</button>
-        <button class="btn btn-success btn-sm" (click)="showJobOffer()">Show</button>
+        <button class="btn btn-danger btn-sm" (click)="deleteJobOffer(jobOffer.id)">Delete</button>
+        <button class="btn btn-warning btn-sm" (click)="editJobOffer(jobOffer.id)">Edit</button>
+        <button class="btn btn-success btn-sm" (click)="showJobOffer(jobOffer.id)">Show</button>
       </div>
     </div>
 

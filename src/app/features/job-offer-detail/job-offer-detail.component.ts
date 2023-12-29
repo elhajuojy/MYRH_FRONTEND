@@ -10,11 +10,14 @@ export class JobOfferDetailComponent implements  OnInit{
   vm$ = this.jobOfferStore.vim$
   nbr!:number
 
+  //TODO : GET ID FROM ROUTING
+
 
   constructor(private jobOfferStore:JobOffersStore) {
   }
 
   ngOnInit(): void {
     // this.jobOfferStore.getNbrOffers();
+
   }
 }
