@@ -1,3 +1,5 @@
+import {EducationLevel} from "./EducationLevel.enums";
+
 export interface JobApplicant{
     id: number;
     first_name: string;
@@ -18,4 +20,34 @@ export interface JobApplicant{
     job_offer_type: string;
     job_offer_company: string;
 
+}
+
+
+export interface JobApplicationRequest{
+  name: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  address: string;
+  education: string;
+  experience: string;
+  educationLevel: EducationLevel;
+  resume: File;
+  coverLetter: File;
+  jobOfferId: number;
+}
+
+export interface JobApplicationResponse {
+  id:number;
+  name: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  address: string;
+  education: string;
+  experience: string;
+  educationLevel: EducationLevel;
+  resume: File;
+  coverLetter: File;
+  jobOfferId: number;
 }
