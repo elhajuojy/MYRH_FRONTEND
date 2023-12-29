@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CompanyService} from "../../../../service/company/company.service";
 
 @Component({
   selector: 'sing-up-company',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class CompanySingUpComponent {
 
+
+  constructor(private companyService:CompanyService) {
+  }
+
+  onSingUpSubmit(form:any):void{
+    //
+  }
 }
