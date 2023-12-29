@@ -1,5 +1,5 @@
 import {ComponentStore, tapResponse} from "@ngrx/component-store";
-import {JobOfferService} from "../service/job-offer.service";
+import {JobOfferService} from "../service/job-offer/job-offer.service";
 import {Injectable} from "@angular/core";
 import {HttpErrorResponse} from "@angular/common/http";
 
