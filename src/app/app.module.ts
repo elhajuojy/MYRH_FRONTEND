@@ -25,6 +25,7 @@ import {CompanyAddJobOffersComponent} from "./features/company/add-offers/compan
 import { AdminJobOffersComponent } from './features/admin/admin-job-offers/admin-job-offers.component';
 import { AdminAsideBarDashboardComponent } from './shared/admin/admin-aside-bar-dashboard/admin-aside-bar-dashboard.component';
 import { AdminHeaderDashboardComponent } from './shared/admin/admin-header-dashboard/admin-header-dashboard.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AdminHeaderDashboardComponent } from './shared/admin/admin-header-dashb
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [
