@@ -1,6 +1,6 @@
 import { Injectable  } from '@angular/core';
 import { environment } from "../../../environments/environment";
-import {Observable, Observer, Subscriber, Subscription, TeardownLogic, Unsubscribable} from "rxjs";
+import {Observable, Observer, Subscriber, Subscription, TeardownLogic, throwIfEmpty, Unsubscribable} from "rxjs";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {
   JobOfferChangeVisibilityRequest,
@@ -44,12 +44,10 @@ export class JobOfferService {
   }
 
 
-
-
-
-
-
-
+  getOneJobOffer(id: string):Observable<JobOfferResponse> {
+    console.log("something over the rainbow")
+      return this.http.get(this.baseUrl+`/${id}`) as  Observable<JobOfferResponse>
+  }
 }
 
 

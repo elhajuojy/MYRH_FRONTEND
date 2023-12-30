@@ -1,23 +1,26 @@
 
 <app-job-offer-layouts>
 
+  <div error-content  *ngIf="error" class="alert alert-danger mt-4" role="alert">
+    {{ error }}
+  </div>
+<div *ngIf="jobOffer"  job-offer-content class="container  row gap-3  my-4 p-4">
 
-<div job-offer-content class="container row gap-3  my-4 p-4">
-    <div class="card " style="max-width: 70%">
+    <div  class="card job-detail-container " style="max-width: 70%">
       <a class="text-dark" href="#">
           <p class="m-4 text-end ">Annonce suivante
             <i class="bi bi-arrow-right-circle-fill"></i>
           </p>
       </a>
       <h2 class="m-2">
-        Commercial senior b2b grand comptes / poste uniquement pour les diplomés(e) bac+5
+        {{jobOffer.title}} Commercial senior b2b grand comptes / poste uniquement pour les diplomés(e) bac+5
       </h2>
       <div class="d-flex gap-3 align-items-center align-content-center  " style="padding: 0px" >
         <p class="my-auto">Publié le 12/12/2020</p>
         <div class="vr"></div>
         <p class="my-auto">par <a href="#">Annonce N°: 9450742</a></p>
         <div class="vr"></div>
-        <p class="my-auto">CASABLANCA </p>
+        <p class="my-auto">{{jobOffer.location}} </p>
         <div class="vr"></div>
         <p class="my-auto">Vue: 1792</p>
         <div class="vr"></div>
@@ -25,12 +28,13 @@
       </div>
         <div class="my-3">
           <div class="w-25 mx-4  float-start" style="max-width: 200px">
-            <img class="w-100 "   src="https://www.marocannonces.com/user_images/309/4689665.jpg" alt="something">
+            <img class="w-100 " src="https://www.marocannonces.com/user_images/309/4689665.jpg" alt="something">
           </div>
           <p class="text-wrap" [ngStyle]="{
             lineHeight: '2',
 
           }">
+            {{jobOffer.description }}
             Ce poste est pour vous si vous avez un bac+5 et diplômé (e) d'une école de commerce
             Le (a) candidat(e) sera pourvu d’une bonne expérience commerciale / marketing digitale  et devra assurer la vente et la prospection terrain d'une clientèle professionnelle dans le domaine de l'empoi (Recrutement)
             Ciblage : Cabinets RH, intérim, hôtels, usines, Restaurants, multinationale..
@@ -62,7 +66,7 @@
         </div>
     </div>
     <div class="col ">
-      <a [routerLink]="['apply']"  type="button" class="btn btn-lg my-1 w-100 btn-danger">
+      <a [routerLink]="['apply',jobOffer.id]"  type="button" class="btn btn-lg my-1 w-100 btn-danger">
           Je suis intéressé(e)
       </a>
       <button type="button" class="btn btn-lg my-1 d-flex align-items-center w-100 btn-outline-primary">
