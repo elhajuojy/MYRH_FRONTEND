@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {JobOfferResponse} from "../../interfaces/jobOffer.model";
+import {JobOfferChangeVisibilityRequest, JobOfferResponse} from "../../interfaces/jobOffer.model";
+import {JobOfferService} from "../../service/job-offer/job-offer.service";
 
 @Component({
   selector: 'app-job-offer-card',
@@ -13,6 +14,9 @@ export class JobOfferCardComponent implements OnInit{
   @Input() number!: number;
   @Input() jobOffer!:JobOfferResponse
 
+  constructor(private jobOfferService:JobOfferService) {
+  }
+
   ngOnInit(): void {
   }
 
@@ -25,6 +29,18 @@ export class JobOfferCardComponent implements OnInit{
   }
 
   showJobOffer(id: number) {
-    console.log(id)
+    let jobOfferChangeVisibility:JobOfferChangeVisibilityRequest = {
+      jobOfferId:id.toString(), visibility:true
+    }
+
+    this.jobOfferService.changeJobOfferVisibility(jobOfferChangeVisibility).subscribe({
+      next:(data)=>{
+        console.log(data)
+      },
+      error:(error)=>{
+        console.log(error)
+      }
+    })
+
   }
 }

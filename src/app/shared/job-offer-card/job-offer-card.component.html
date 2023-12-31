@@ -1,20 +1,5 @@
-<!--<div class="card d-flex gap-2">-->
-<!--  <div class="img-fluid">-->
-<!--    <img src="favicon.ico" alt="logo">-->
-<!--  </div>-->
-<!--  <div class="card-info">-->
-<!--    <h2>Card Title</h2>-->
-<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptate.</p>-->
-<!--    <p>salary: {{ 1000 }}</p>-->
-<!--    <p>location: {{ 'location' }}</p>-->
-<!--    <a href="#" class="btn btn-primary">Read More</a>-->
-
-<!--  </div>-->
-<!--</div>-->
-
 
   <div
-    [routerLink]="['/job_offers', jobOffer.id]"
     role="button"
     class="w-100 border rounded   d-flex gap-3 ">
     <div class="w-25 h-25 my-auto" style="max-width: 120px ; margin-left: 20px">
@@ -28,7 +13,9 @@
             <p class="m-1">salary: {{ jobOffer.salary }}</p>
             <p class="m-1">contract: {{ jobOffer.contract }}</p>
             <p class="m-1">location: {{ jobOffer.location }}</p>
-            <a href="#" class="btn btn-light btn-sm">Read More</a>
+            <a
+               [routerLink]="['/job_offers', jobOffer.id]"
+               class="btn btn-light btn-sm">Read More</a>
       </div>
       <div *ngIf="showAdminOptions" class="d-flex gap-3 mt-4 ">
         <button class="btn btn-danger btn-sm" (click)="deleteJobOffer(jobOffer.id)">Delete</button>

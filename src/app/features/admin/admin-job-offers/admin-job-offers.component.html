@@ -2,8 +2,16 @@
   <div admin-content  class="container">
 
     <div id="job-offers" class="d-grid mt-4 gap-3">
-      <app-job-offer-card [showAdminOptions]="true" *ngFor="let i of [1,2,3]" [number]="i"></app-job-offer-card>
-      <app-pagination></app-pagination>
+      <app-job-offer-card
+        [showAdminOptions]="true"
+        *ngFor="let jobOffer of jobOffers"
+        [jobOffer]="jobOffer"
+      >
+
+      </app-job-offer-card>
+      <app-pagination
+
+      ></app-pagination>
     </div>
 
   </div>
