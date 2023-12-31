@@ -5,7 +5,7 @@ export  interface CompanyRequest{
   phoneNumber: string;
   password: string;
   email: string;
-  website?: string;
+  website: string;
   description: string;
   image: File;
 }
