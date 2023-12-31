@@ -1,0 +1,26 @@
+body {
+  background-color: #f8f9fa; /* Set a background color */
+}
+
+.container {
+  margin-top: 5rem;
+}
+
+h2 {
+  text-align: center;
+  color: #007bff; /* Set your preferred text color */
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+button {
+  width: 100%;
+}
+
+a{
+  color: #007bff;
+  text-align: center;
+}
