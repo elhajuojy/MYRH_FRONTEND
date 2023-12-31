@@ -15,7 +15,12 @@
         <app-job-offer-card *ngFor="let jobOffer of jobOffers"
         [jobOffer]="jobOffer"
         ></app-job-offer-card>
-        <app-pagination></app-pagination>
+        <app-pagination
+          [totalElements]="nbrOffers"
+          [pageSize]="pageSize"
+          [currentPage]="currentPage"
+          (pageChange)="onPageChange($event)"
+        ></app-pagination>
       </div>
 
     </div>

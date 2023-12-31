@@ -3,6 +3,8 @@ import {JobOffersStore} from "../../store/job-offer.store";
 import {JobOfferService} from "../../service/job-offer/job-offer.service";
 import {JobOfferResponse} from "../../interfaces/jobOffer.model";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {ToastService} from "angular-toastify";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-job-offers',
@@ -14,28 +16,40 @@ export class JobOffersComponent  implements OnInit{
   message:string=''
   title = 'my-rh-ng';
   vm$ = this.jobOfferStore.vim$
-  constructor(private jobOfferStore:JobOffersStore, private jobOfferService:JobOfferService) {
+  nbrOffers: number = 0;
+  pageSize: number = 10;
+  currentPage: number = 0;
+  constructor(
+    private jobOfferStore:JobOffersStore,
+    private jobOfferService:JobOfferService,
+    private _toastService: ToastService,
+    private router :Router,
+    private activatedRoute:ActivatedRoute) {
+  }
+
+  onPageChange(page:number){
+    this.getJobOffers(page);
   }
 
   ngOnInit(): void {
-        // this.jobOfferStore.getNbrOffers();
-   let params  = new Map<string, string>() ;
-   params.set("page","0");
-   // params.set("size","10");
-   // params.set("title","job-3");
-   // params.set("education","BAC-5");
-   // params.set("location","casablanca");
-   this.jobOfferService.getAllJobOffers(params).subscribe({
-     next:(data)=>{
-       this.jobOffers=data.content;
+    this.getJobOffers();
+  }
 
-    },
-     error:(error)=>{
-       this.message = error.message;
-     }
-   });
-
-
+  getJobOffers(page:number=0){
+    let params  = new Map<string, string>() ;
+    params.set("page", page.toString());
+    params.set("size","1");
+    this.jobOfferService.getAllJobOffers(params).subscribe({
+      next:(data)=>{
+        this.jobOffers=data.content;
+        this.nbrOffers = data.totalPages;
+        this.pageSize = data.size;
+        this.currentPage = data.number;
+      },
+      error:(error)=>{
+        this.message = error.message;
+      }
+    });
   }
 
 

@@ -45,7 +45,6 @@ export class JobOfferService {
 
 
   getOneJobOffer(id: string):Observable<JobOfferResponse> {
-    console.log("something over the rainbow")
       return this.http.get(this.baseUrl+`/${id}`) as  Observable<JobOfferResponse>
   }
 }
