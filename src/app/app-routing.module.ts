@@ -6,9 +6,10 @@ import {JobOfferApplyComponent} from "./features/job-offer-apply/job-offer-apply
 import {CompanyDashboardComponent} from "./features/company/dashboard/company-dashboard.component";
 import {CompanyLoginComponent} from "./features/company/auth/login/company-login.component";
 import {CompanySingUpComponent} from "./features/company/auth/sing-up/company-sing-up.component";
-import {CodeValidationComponent} from "./features/auth/code-validation/code-validation.component";
+import {CodeValidationComponent} from "./features/company/auth/code-validation/code-validation.component";
 import {AdminLayoutComponent} from "./layouts/admin-layout/admin-layout.component";
 import {AdminJobOffersComponent} from "./features/admin/admin-job-offers/admin-job-offers.component";
+import {ApplicantLoginComponent} from "./features/applicant/auth/login/applicant-login.component";
 
 const routes: Routes = [
   {path: "job_offers", component: JobOffersComponent},
@@ -18,6 +19,8 @@ const routes: Routes = [
   {path: 'companies/login', component: CompanyLoginComponent},
   {path: 'companies/sing_up', component: CompanySingUpComponent},
   {path:'code_validation', component: CodeValidationComponent},
+  {path:'applicant/login', component: ApplicantLoginComponent},
+  {path:'applicant/sing_up', component: ApplicantLoginComponent},
   {path: 'admin', component: AdminJobOffersComponent},
   // {path: "", redirectTo: "/job-offers", pathMatch: "full"},
   // { path: '**', redirectTo: '/job-offers', pathMatch: 'full' }

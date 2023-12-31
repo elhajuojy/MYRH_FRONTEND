@@ -11,8 +11,8 @@ import {FormGroup} from "@angular/forms";
 export class JobApplicationService {
 
 
-  // private baseUrl: string = environment.backendHost+"/job_applications";
-  private baseUrl: string = "http://localhost:8080/api/v1/job_applications";
+  private baseUrl: string = environment.backendHost+"/job_applications";
+  // private baseUrl: string = "http://localhost:8080/api/v1/job_applications";
   constructor(private http:HttpClient) {
   }
 

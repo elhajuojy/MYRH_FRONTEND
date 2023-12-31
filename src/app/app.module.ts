@@ -28,12 +28,16 @@ import { AdminHeaderDashboardComponent } from './shared/admin/admin-header-dashb
 import {HttpClientModule} from "@angular/common/http";
 import {AngularToastifyModule} from "angular-toastify";
 import { ApplicantComponent } from './features/applicant/applicant.component';
+import {ApplicantSingUpComponent} from "./features/applicant/auth/sing-up/applicant-sing-up.component";
+import {ApplicantLoginComponent} from "./features/applicant/auth/login/applicant-login.component";
 
 @NgModule({
   declarations: [
     BannerComponent,
     NavbarComponent,
     SearchbarComponent,
+    ApplicantSingUpComponent,
+    ApplicantLoginComponent,
     JobOfferCardComponent,
     JobOffersComponent,
     JobOfferLayoutComponent,

@@ -1,0 +1,61 @@
+<div class="mt-lg-5" >
+  <lib-toastify-toast-container
+  ></lib-toastify-toast-container>
+  <div class="container h-100 mt-lg-auto">
+    <div class="row mt-auto" >
+      <div class="col-md-6">
+        <img src="https://img.freepik.com/free-vector/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.jpg?w=1480&t=st=1704012936~exp=1704013536~hmac=bd9c8e79617720de18504df2181736f2df2b3d35c4bb0365477829bef85bc247" alt="Image" class="img-fluid">
+      </div>
+      <div class="col-md-6 contents">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="mb-4">
+              <h3>Sign In  Applicant </h3>
+              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+            </div>
+            <form
+                  [formGroup]="loginForm"
+                  (ngSubmit)="onLoginSubmit(loginForm)"
+            >
+              <div class="form-group first">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email"
+                formControlName="email"
+                >
+
+              </div>
+              <div class="form-group last mb-4">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password"
+                formControlName="password"
+                >
+
+              </div>
+              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+            </form>
+
+            <div class="d-flex gap-3 mb-5 align-items-center">
+              <label class="control control--checkbox mb-0">
+                <span class="caption">Remember me</span>
+                <input class="form-check-input mx-1" type="checkbox" id="disabledFieldsetCheck" >
+                <div class="control__indicator"></div>
+              </label>
+              <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+            </div>
+              <span class="d-block text-left my-4 text-muted">&mdash; or login with &mdash;</span>
+
+              <div class="social-login">
+                <a class="text-danger" href="#"> <i class="bi  mx-1 bi-instagram"></i></a>
+                <a class="text-danger" href="#"> <i class="bi mx-1  bi-facebook"></i></a>
+                <a class="text-danger" href="#"> <i class="bi  mx-1 bi-linkedin"></i></a>
+                <a class="text-danger" href="#"> <i class="bi  mx-1 bi-youtube"></i></a>
+                <a class="text-danger" href="#"> <i class="bi  mx-1 bi-behance"></i></a>
+                <a class="text-danger" href="#"> <i class="bi  mx-1 bi-twitter"></i></a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

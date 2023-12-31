@@ -71,7 +71,6 @@ export class JobOfferApplyFormComponent implements OnInit {
     //   coverLetter: form.value.coverLetter,
     //   jobOfferId: this.jobOfferId as unknown as number
     // }
-
     this.jobApplicationService.applyToJob(form).subscribe(
       (response)=>{
         console.log(response)
