@@ -30,6 +30,7 @@ import {AngularToastifyModule} from "angular-toastify";
 import { ApplicantComponent } from './features/applicant/applicant.component';
 import {ApplicantSingUpComponent} from "./features/applicant/auth/sing-up/applicant-sing-up.component";
 import {ApplicantLoginComponent} from "./features/applicant/auth/login/applicant-login.component";
+import {CodeValidationComponent} from "./features/company/auth/code-validation/code-validation.component";
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {ApplicantLoginComponent} from "./features/applicant/auth/login/applicant
     AuthLayoutComponent,
     PaginationComponent,
     JobOfferApplyComponent,
+    CodeValidationComponent,
     JobOfferApplyFormComponent,
     CompanyLoginComponent,
     CompanyAddJobOffersComponent,
