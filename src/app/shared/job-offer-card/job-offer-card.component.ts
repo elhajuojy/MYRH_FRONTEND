@@ -14,7 +14,6 @@ export class JobOfferCardComponent implements OnInit{
   @Input() jobOffer!:JobOfferResponse
 
   ngOnInit(): void {
-    console.log(this.number);
   }
 
   deleteJobOffer(id: number) {

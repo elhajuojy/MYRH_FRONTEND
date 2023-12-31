@@ -1,24 +1,26 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {JobOffersStore} from "../../store/job-offer.store";
 import {JobOfferService} from "../../service/job-offer/job-offer.service";
 import {JobOfferResponse} from "../../interfaces/jobOffer.model";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 import {ToastService} from "angular-toastify";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-job-offers',
   templateUrl: './job-offers.component.html',
   styleUrls: ['./job-offers.component.css'],
 })
-export class JobOffersComponent  implements OnInit{
+export class JobOffersComponent  implements OnInit, OnDestroy{
   jobOffers:JobOfferResponse[] = []
   message:string=''
   title = 'my-rh-ng';
   vm$ = this.jobOfferStore.vim$
-  nbrOffers: number = 0;
+  totalPages: number = 0;
   pageSize: number = 10;
   currentPage: number = 0;
+  paramsSubscription:Subscription = new Subscription();
   constructor(
     private jobOfferStore:JobOffersStore,
     private jobOfferService:JobOfferService,
@@ -27,22 +29,36 @@ export class JobOffersComponent  implements OnInit{
     private activatedRoute:ActivatedRoute) {
   }
 
-  onPageChange(page:number){
-    this.getJobOffers(page);
+  ngOnDestroy(): void {
+        this.paramsSubscription.unsubscribe();
   }
+
+  // onPageChange(page:number){
+  //   this.getJobOffers(page);
+  // }
 
   ngOnInit(): void {
-    this.getJobOffers();
+    this.paramsSubscription = this.activatedRoute.queryParams.subscribe(params => {
+        console.log(params)
+        this.getJobOffers(
+          params
+        );
+    }
+    )
   }
 
-  getJobOffers(page:number=0){
+  getJobOffers(_params:Params = {}){
+
     let params  = new Map<string, string>() ;
-    params.set("page", page.toString());
-    params.set("size","1");
+    params.set("size","3");
+    for (let key in _params) {
+      params.set(key,_params[key]);
+    }
+
     this.jobOfferService.getAllJobOffers(params).subscribe({
       next:(data)=>{
         this.jobOffers=data.content;
-        this.nbrOffers = data.totalPages;
+        this.totalPages = data.totalPages;
         this.pageSize = data.size;
         this.currentPage = data.number;
       },
@@ -51,6 +67,8 @@ export class JobOffersComponent  implements OnInit{
       }
     });
   }
+
+
 
 
   addMoreOfferJobsNbr() {

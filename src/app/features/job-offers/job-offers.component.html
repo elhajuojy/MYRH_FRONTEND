@@ -16,10 +16,9 @@
         [jobOffer]="jobOffer"
         ></app-job-offer-card>
         <app-pagination
-          [totalElements]="nbrOffers"
+          [totalElements]="totalPages"
           [pageSize]="pageSize"
           [currentPage]="currentPage"
-          (pageChange)="onPageChange($event)"
         ></app-pagination>
       </div>
 
