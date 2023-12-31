@@ -1,50 +1,65 @@
+<form [formGroup]="jobOfferApplyFrom" (ngSubmit)="handleApplaySubmit(jobOfferApplyFrom)">
 
-<form (ngSubmit)="handleApplaySubmit($event)">
+  <div class="row gap-3 ">
+    <div class="mb-3 col">
+      <label for="prenom" class="form-label">Prenom <span class="text-danger">*</span></label>
+      <input class="form-control form-control-lg" id="prenom" type="text" placeholder="prenom" formControlName="name" aria-label=".form-control-lg example">
+    </div>
+    <div class="col">
+      <label for="nom" class="form-label">nom  <span class="text-danger">*</span></label>
+      <input type="text" id="nom" class="form-control form-control-lg" placeholder="nom" formControlName="lastName">
+    </div>
+  </div>
+  <div class="row gap-3 ">
+    <div class="mb-3 col">
+      <label for="email" class="form-label">email <span class="text-danger">*</span></label>
+      <input class="form-control form-control-lg" id="email" type="email" required placeholder="email" formControlName="email" aria-label=".form-control-lg example">
+    </div>
+    <div class="col">
+      <label for="phone" class="form-label">phone  <span class="text-danger">*</span></label>
+      <input type="number" required id="phone" class="form-control form-control-lg" placeholder="phone number" formControlName="phone">
+    </div>
+  </div>
+  <div class="row gap-3 ">
+    <div class="mb-3 col">
+      <label for="address" class="form-label">address <span class="text-danger">*</span></label>
+      <input class="form-control form-control-lg" id="address" type="text" required placeholder="email" formControlName="address" aria-label=".form-control-lg example">
+    </div>
+  </div>
+  <div class="row gap-3 ">
+    <div class="mb-3 col">
+      <label for="experience" class="form-label">experience <span class="text-danger">*</span></label>
+      <input class="form-control form-control-lg" id="experience" type="text" required placeholder="experience" formControlName="experience" aria-label=".form-control-lg example">
+    </div>
+  </div>
 
-    <div class="row gap-3 ">
-      <div class="mb-3 col">
-        <label for="prenom" class="form-label">Prenom <span class="text-danger">*</span></label>
-        <input class="form-control form-control-lg" id="prenom" type="text" placeholder="prenom" aria-label=".form-control-lg example">
-      </div>
-      <div class="col">
-        <label for="nom" class="form-label">nom  <span class="text-danger">*</span></label>
-        <input type="text" id="nom" class="form-control form-control-lg" placeholder="nom">
-      </div>
+  <div class="row gap-3 ">
+    <div class="mb-3 col">
+      <label for="education" class="form-label">education <span class="text-danger">*</span></label>
+      <input class="form-control form-control-lg" id="education" type="text" required placeholder="education" formControlName="education" aria-label=".form-control-lg example">
     </div>
-    <div class="row gap-3 ">
-      <div class="mb-3 col">
-        <label for="email" class="form-label">email <span class="text-danger">*</span></label>
-        <input class="form-control form-control-lg" id="email" type="email" required placeholder="email" aria-label=".form-control-lg example">
-      </div>
-      <div class="col">
-        <label for="phone" class="form-label">phone  <span class="text-danger">*</span></label>
-        <input type="number" required id="phone" class="form-control form-control-lg" placeholder="phone number">
-      </div>
-    </div>
-    <div class="row gap-3 ">
-      <div class="mb-3 col">
-        <label for="location" class="form-label">location <span class="text-danger">*</span></label>
-        <input class="form-control form-control-lg" id="location" type="text" required placeholder="email" aria-label=".form-control-lg example">
-      </div>
-    </div>
-    <div class="input-group mb-3">
-      <label class="input-group-text" for="inputGroupFile01">Upload</label>
-      <input type="file" class="form-control" id="inputGroupFile01">
-    </div>
-    <div class="input-group">
-      <span class="input-group-text">With textarea</span>
-      <textarea class="form-control" aria-label="With textarea"></textarea>
-    </div>
+  </div>
 
-
-
-    <div class="my-4">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" >
-        <label class="form-check-label" for="disabledFieldsetCheck">
-          Can't check this
-        </label>
-      </div>
+  <div class="row mb-3">
+    <div class="mb-3 col ">
+      <label class="form-label" for="resume">Upload your resume <span class="text-danger">*</span></label>
+      <input type="file" class="form-control form-control-lg" id="resume" formControlName="resume">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  <div class="input-group">
+    <span class="input-group-text">With textarea</span>
+    <textarea class="form-control" formControlName="coverLetter" aria-label="With textarea"></textarea>
+  </div>
+  <div class="row gap-3 ">
+    <div class="mb-3 col">
+      <label for="educationLevel" class="form-label">Education Level <span class="text-danger">*</span></label>
+      <select class="form-select form-select-lg" id="educationLevel" formControlName="educationLevel">
+        <option *ngFor="let level of educationLevels" [value]="level">{{level}}</option>
+      </select>
+    </div>
+  </div>
+
+  <button type="submit" class="btn mt-4 btn-lg btn-primary">
+    Postuler maintenant
+  </button>
 </form>

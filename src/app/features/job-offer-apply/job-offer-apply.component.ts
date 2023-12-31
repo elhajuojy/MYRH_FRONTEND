@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastService } from 'angular-toastify';
 
 @Component({
   selector: 'app-job-offer-apply',

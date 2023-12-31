@@ -11,16 +11,16 @@ import {AdminLayoutComponent} from "./layouts/admin-layout/admin-layout.componen
 import {AdminJobOffersComponent} from "./features/admin/admin-job-offers/admin-job-offers.component";
 
 const routes: Routes = [
-  {path: "job-offers", component: JobOffersComponent},
-  {path: "job-offers/:id", component: JobOfferDetailComponent},
-  {path: "job-offers/:id/apply", component: JobOfferApplyComponent},
+  {path: "job_offers", component: JobOffersComponent},
+  {path: "job_offers/:id", component: JobOfferDetailComponent},
+  {path: "job_offers/:id/apply", component: JobOfferApplyComponent},
   {path: 'companies/:id/dashboard', component: CompanyDashboardComponent},
   {path: 'companies/login', component: CompanyLoginComponent},
   {path: 'companies/sing_up', component: CompanySingUpComponent},
-  {path:'code-validation', component: CodeValidationComponent},
+  {path:'code_validation', component: CodeValidationComponent},
   {path: 'admin', component: AdminJobOffersComponent},
-  {path: "", redirectTo: "/job-offers", pathMatch: "full"},
-  { path: '**', redirectTo: '/job-offers', pathMatch: 'full' }
+  // {path: "", redirectTo: "/job-offers", pathMatch: "full"},
+  // { path: '**', redirectTo: '/job-offers', pathMatch: 'full' }
 
 ];
 

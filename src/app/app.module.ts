@@ -9,7 +9,7 @@ import {SearchbarComponent} from "./shared/search-bar/searchbar.component";
 import { JobOfferCardComponent } from './shared/job-offer-card/job-offer-card.component';
 import { JobOffersComponent } from './features/job-offers/job-offers.component';
 import { JobOfferLayoutComponent } from './layouts/job-offer-layout/job-offer-layout.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { JobOfferDetailComponent } from './features/job-offer-detail/job-offer-detail.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
@@ -26,6 +26,8 @@ import { AdminJobOffersComponent } from './features/admin/admin-job-offers/admin
 import { AdminAsideBarDashboardComponent } from './shared/admin/admin-aside-bar-dashboard/admin-aside-bar-dashboard.component';
 import { AdminHeaderDashboardComponent } from './shared/admin/admin-header-dashboard/admin-header-dashboard.component';
 import {HttpClientModule} from "@angular/common/http";
+import {AngularToastifyModule} from "angular-toastify";
+import { ApplicantComponent } from './features/applicant/applicant.component';
 
 @NgModule({
   declarations: [
@@ -50,13 +52,16 @@ import {HttpClientModule} from "@angular/common/http";
     AppComponent,
     AdminJobOffersComponent,
     AdminAsideBarDashboardComponent,
-    AdminHeaderDashboardComponent
+    AdminHeaderDashboardComponent,
+    ApplicantComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    AngularToastifyModule
   ],
   providers: [],
   bootstrap: [
