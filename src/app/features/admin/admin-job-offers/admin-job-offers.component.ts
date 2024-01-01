@@ -16,7 +16,12 @@ export class AdminJobOffersComponent {
   }
 
   ngOnInit(): void {
-    this.jobOfferService.getAllJobOffers(new Map<string, string>()).subscribe({
+
+    let params = new Map<string, string>()
+    params.set("size","5");
+    // params.set("visibility","false");
+    // params.set("page","0");
+    this.jobOfferService.getAllJobOffers(params).subscribe({
       next:(data)=>{
         this.jobOffers=data.content;
       },

@@ -51,6 +51,7 @@ export class JobOffersComponent  implements OnInit, OnDestroy{
 
     let params  = new Map<string, string>() ;
     params.set("size","3");
+    params.set("visibility","true");
     for (let key in _params) {
       params.set(key,_params[key]);
     }
