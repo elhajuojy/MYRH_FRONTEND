@@ -18,10 +18,13 @@
                class="btn btn-light btn-sm">Read More</a>
       </div>
       <div *ngIf="showAdminOptions" class="d-flex gap-3 mt-4 ">
-        <button class="btn btn-danger btn-sm" (click)="deleteJobOffer(jobOffer.id)">Delete</button>
-        <button class="btn btn-warning btn-sm" (click)="editJobOffer(jobOffer.id)">Edit</button>
+
         <button class="btn btn-success btn-sm" (click)="showJobOffer(jobOffer.id)">Show</button>
       </div>
+      <div *ngIf="isCompany" class="d-flex gap-3 mt-4 ">
+        <button class="btn btn-success btn-sm" (click)="editJobOffer(jobOffer.id)">Show applications</button>
+        <button class="btn btn-success btn-sm" (click)="editJobOffer(jobOffer.id)">Edit</button>
+        <button class="btn btn-danger btn-sm" (click)="deleteJobOffer(jobOffer.id)">Delete</button>
     </div>
   </div>
 

@@ -16,17 +16,27 @@ export class JobApplicationService {
   constructor(private http:HttpClient) {
   }
 
-  applyToJob(form:FormGroup):Observable<JobApplicationResponse>{
-    console.log(form.value)
+  applyToJob(jobApplicationRequest:JobApplicationRequest):Observable<JobApplicationResponse>{
+    console.log(jobApplicationRequest)
     //TODO: WHEN I SEND DATA TO BACKEND I THE OBJECT IS NULL AND NOT VALIDATED ??
-    const headers = {
-      'content-type': 'multipart/form-data',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Content-Type,x-requested-with,xmlhttprequest',
-      'Access-Control-Allow-Request': '*',
-      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
+    //TODO:CONVERT TO FORM DATA TO SEND FILE
 
-    }
-    return this.http.post(this.baseUrl,form.value,{headers}) as Observable<JobApplicationResponse>
+    const formData: FormData = new FormData();
+    formData.append('name',jobApplicationRequest.name)
+    formData.append('lastName',jobApplicationRequest.lastName)
+    formData.append('email',jobApplicationRequest.email)
+    formData.append('phone',jobApplicationRequest.phone)
+    //TODO: ADD RESUME TO FORM DATA
+    // formData.append('resume',jobApplicationRequest.resume)
+    formData.append('coverLetter',jobApplicationRequest.coverLetter)
+    formData.append('address',jobApplicationRequest.address)
+    formData.append('education',jobApplicationRequest.education)
+    formData.append('experience',jobApplicationRequest.experience)
+    formData.append('educationLevel',jobApplicationRequest.educationLevel.toString())
+    formData.append('jobOfferId',jobApplicationRequest.jobOfferId.toString())
+
+
+
+    return this.http.post(this.baseUrl,formData) as Observable<JobApplicationResponse>
   }
 }

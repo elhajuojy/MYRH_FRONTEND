@@ -44,7 +44,7 @@ export class CompanySingUpComponent implements OnInit{
         console.log(data)
         //TODO: REDIRECT TO CODE VERIFICATION PAGE WITH EMAIL
         this.router.navigate(['companies/code_validation'], {
-          queryParams: { login: data.login } });
+          queryParams: { login: data.login } }).then(r => console.log(r));
       },
       error:(error)=>{
         console.log(error)

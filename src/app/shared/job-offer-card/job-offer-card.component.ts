@@ -13,6 +13,7 @@ export class JobOfferCardComponent implements OnInit{
   @Input() showAdminOptions:boolean = false;
   @Input() number!: number;
   @Input() jobOffer!:JobOfferResponse
+  @Input() isCompany!:boolean;
 
   constructor(private jobOfferService:JobOfferService) {
   }

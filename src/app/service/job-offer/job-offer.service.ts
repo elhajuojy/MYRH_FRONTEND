@@ -47,6 +47,10 @@ export class JobOfferService {
   getOneJobOffer(id: string):Observable<JobOfferResponse> {
       return this.http.get(this.baseUrl+`/${id}`) as  Observable<JobOfferResponse>
   }
+
+  getAllJobOfferByCompanyId(id: number) :Observable<JobOfferPageResponse>{
+      return this.http.get(this.baseUrl+`/company/${id}`) as  Observable<JobOfferPageResponse>
+  }
 }
 
 

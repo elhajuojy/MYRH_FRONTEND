@@ -3,6 +3,7 @@ import {environment} from "../../../environments/environment";
 import {Observable} from "rxjs";
 import {CompanyRequest, CompanyRequestAuth, CompanyResponse} from "../../interfaces/Company.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {JobOfferResponse} from "../../interfaces/jobOffer.model";
 
 @Injectable({
   providedIn: 'root'
