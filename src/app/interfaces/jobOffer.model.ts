@@ -31,6 +31,14 @@ export  interface JobOfferResponse{
   education: string;
 }
 
+export interface JobOfferApplicationsPageResponse{
+  id: string
+  fullName: string
+  email: string
+  phoneNumber: any
+  cvUrl: any
+}
+
 export interface JobOfferRequest{
   title: string;
   description: string;

@@ -10,6 +10,9 @@ import {CodeValidationComponent} from "./features/company/auth/code-validation/c
 import {AdminLayoutComponent} from "./layouts/admin-layout/admin-layout.component";
 import {AdminJobOffersComponent} from "./features/admin/admin-job-offers/admin-job-offers.component";
 import {ApplicantLoginComponent} from "./features/applicant/auth/login/applicant-login.component";
+import {
+  CompanyJobOfferApplicantComponentComponent
+} from "./features/company/company-job-offer-applicant-component/company-job-offer-applicant-component.component";
 
 const routes: Routes = [
   {path: "job_offers", component: JobOffersComponent},
@@ -18,6 +21,8 @@ const routes: Routes = [
   {path: 'companies/sing_up', component: CompanySingUpComponent},
   {path: 'companies/login', component: CompanyLoginComponent},
   {path: 'companies/:id/dashboard', component: CompanyDashboardComponent},
+  {path: 'companies/:id/dashboard', component: CompanyDashboardComponent,},
+  {path:'companies/:id/dashboard/job_applications/:code',component:CompanyJobOfferApplicantComponentComponent},
   {path:'companies/code_validation', component: CodeValidationComponent},
   {path:'applicant/login', component: ApplicantLoginComponent},
   {path:'applicant/sing_up', component: ApplicantLoginComponent},

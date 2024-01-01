@@ -3,6 +3,7 @@ import { environment } from "../../../environments/environment";
 import {Observable, Observer, Subscriber, Subscription, TeardownLogic, throwIfEmpty, Unsubscribable} from "rxjs";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {
+  JobOfferApplicationsPageResponse,
   JobOfferChangeVisibilityRequest,
   JobOfferPageResponse,
   JobOfferRequest,
@@ -50,6 +51,10 @@ export class JobOfferService {
 
   getAllJobOfferByCompanyId(id: number) :Observable<JobOfferPageResponse>{
       return this.http.get(this.baseUrl+`/company/${id}`) as  Observable<JobOfferPageResponse>
+  }
+
+  getJobOfferApplicationByJobOfferIdAndCompanyId(id: number, jobOfferId: number) :Observable<Array<JobOfferApplicationsPageResponse>>{
+    return this.http.get(this.baseUrl+`/company/${id}/job_applications/${jobOfferId}`) as  Observable<Array<JobOfferApplicationsPageResponse>>
   }
 }
 

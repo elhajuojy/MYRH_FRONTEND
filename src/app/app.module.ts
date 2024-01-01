@@ -31,6 +31,7 @@ import { ApplicantComponent } from './features/applicant/applicant.component';
 import {ApplicantSingUpComponent} from "./features/applicant/auth/sing-up/applicant-sing-up.component";
 import {ApplicantLoginComponent} from "./features/applicant/auth/login/applicant-login.component";
 import {CodeValidationComponent} from "./features/company/auth/code-validation/code-validation.component";
+import { CompanyJobOfferApplicantComponentComponent } from './features/company/company-job-offer-applicant-component/company-job-offer-applicant-component.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {CodeValidationComponent} from "./features/company/auth/code-validation/c
     AdminJobOffersComponent,
     AdminAsideBarDashboardComponent,
     AdminHeaderDashboardComponent,
-    ApplicantComponent
+    ApplicantComponent,
+    CompanyJobOfferApplicantComponentComponent
   ],
   imports: [
     BrowserModule,
