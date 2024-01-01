@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {JobOfferChangeVisibilityRequest, JobOfferResponse} from "../../interfaces/jobOffer.model";
 import {JobOfferService} from "../../service/job-offer/job-offer.service";
+import {Router} from "@angular/router";
+import {ToastService} from "angular-toastify";
 
 @Component({
   selector: 'app-job-offer-card',
@@ -15,7 +17,11 @@ export class JobOfferCardComponent implements OnInit{
   @Input() jobOffer!:JobOfferResponse
   @Input() isCompany!:boolean;
 
-  constructor(private jobOfferService:JobOfferService) {
+  constructor(
+    private jobOfferService:JobOfferService,
+    private route:Router,
+    private toastService:ToastService,
+    ) {
   }
 
   ngOnInit(): void {
@@ -27,6 +33,7 @@ export class JobOfferCardComponent implements OnInit{
 
   editJobOffer(id: number) {
     console.log(id)
+
   }
 
   showJobOffer(id: number) {

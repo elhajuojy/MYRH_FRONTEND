@@ -13,7 +13,7 @@ import {JobOfferService} from "../../../service/job-offer/job-offer.service";
 export class CompanyJobOfferApplicantComponentComponent {
   private id!: number;
   private jobOfferId!: number;
-  private jobApplication:JobOfferApplicationsPageResponse[] = []
+  jobApplications:JobOfferApplicationsPageResponse[] = []
 
   constructor(
     private router: Router,
@@ -30,7 +30,7 @@ export class CompanyJobOfferApplicantComponentComponent {
       this.id = params['id'];
       this.jobOfferId = params['code'];
     });
-
+    this.getJobOfferApplicationByJobOfferIdAndCompanyId();
 
   }
 
@@ -38,7 +38,7 @@ export class CompanyJobOfferApplicantComponentComponent {
 
       this.jobOfferService.getJobOfferApplicationByJobOfferIdAndCompanyId(this.id, this.jobOfferId).subscribe({
         next: (data) => {
-          this.jobApplication = data;
+          this.jobApplications = data;
           console.log(data)
 
         },

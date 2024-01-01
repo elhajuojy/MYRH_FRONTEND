@@ -22,7 +22,7 @@
         <button class="btn btn-success btn-sm" (click)="showJobOffer(jobOffer.id)">Show</button>
       </div>
       <div *ngIf="isCompany" class="d-flex gap-3 mt-4 ">
-        <button class="btn btn-success btn-sm" (click)="editJobOffer(jobOffer.id)">Show applications</button>
+        <a class="btn btn-success btn-sm" type="button" [routerLink]="['job_applications',jobOffer.id]" >Show applications</a>
         <button class="btn btn-success btn-sm" (click)="editJobOffer(jobOffer.id)">Edit</button>
         <button class="btn btn-danger btn-sm" (click)="deleteJobOffer(jobOffer.id)">Delete</button>
     </div>

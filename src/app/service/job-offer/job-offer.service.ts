@@ -54,7 +54,7 @@ export class JobOfferService {
   }
 
   getJobOfferApplicationByJobOfferIdAndCompanyId(id: number, jobOfferId: number) :Observable<Array<JobOfferApplicationsPageResponse>>{
-    return this.http.get(this.baseUrl+`/company/${id}/job_applications/${jobOfferId}`) as  Observable<Array<JobOfferApplicationsPageResponse>>
+    return this.http.get(this.baseUrl+`/company/${id}/applications/${jobOfferId}`) as  Observable<Array<JobOfferApplicationsPageResponse>>
   }
 }
 

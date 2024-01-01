@@ -1,1 +1,14 @@
-<p>company-job-offer-applicant-component works!</p>
+<company-layout>
+  <div comapny-content class="container">
+      <div class="alert alert-info mt-4" *ngIf="jobApplications.length === 0">
+        <h4 class="alert-heading">No applications yet</h4>
+        <p>There are no applications for this job offer yet.</p>
+      </div>
+      <div class="mt-4">
+        <app-job-offer-application-card
+          *ngFor="let application of jobApplications "
+          [jobOfferApplication]="application"
+        ></app-job-offer-application-card>
+      </div>
+  </div>
+</company-layout>
