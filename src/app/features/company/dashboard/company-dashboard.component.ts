@@ -4,6 +4,7 @@ import {ToastService} from "angular-toastify";
 import {CompanyService} from "../../../service/company/company.service";
 import {JobOfferService} from "../../../service/job-offer/job-offer.service";
 import {JobOfferResponse} from "../../../interfaces/jobOffer.model";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'company-dashboard',
@@ -34,6 +35,15 @@ export class CompanyDashboardComponent implements OnInit {
   }
 
   //TODO: GET ALL OFFER'S  RELATED TO THIS COMPANY
+  jobOfferForm: FormGroup = new FormGroup({
+    title: new FormControl('', Validators.required),
+    description: new FormControl('', Validators.required),
+    salary: new FormControl('', Validators.required),
+    location: new FormControl('', Validators.required),
+    contract: new FormControl('', Validators.required),
+    education: new FormControl('', Validators.required),
+    companyId: new FormControl(this.id),
+  });
   getAllOffersByCompanyId() {
 
     this.jobOfferService.getAllJobOfferByCompanyId(this.id).subscribe({
@@ -50,4 +60,18 @@ export class CompanyDashboardComponent implements OnInit {
   }
 
 
+  handleJobOfferFormSubmit(jobOfferForm: FormGroup) {
+    console.log(jobOfferForm.value)
+    this.jobOfferForm.value.companyId = this.id;
+    this.jobOfferService.createJobOffer(jobOfferForm.value).subscribe({
+      next: (data) => {
+        console.log(data)
+        this._toastService.success("Job Offer Created Successfully");
+        this.jobOffers.push(data);
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    });
+  }
 }

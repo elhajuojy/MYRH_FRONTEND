@@ -20,15 +20,15 @@ const routes: Routes = [
   {path: "job_offers/:id/apply", component: JobOfferApplyComponent},
   {path: 'companies/sing_up', component: CompanySingUpComponent},
   {path: 'companies/login', component: CompanyLoginComponent},
-  {path: 'companies/:id/dashboard', component: CompanyDashboardComponent},
   {path: 'companies/:id/dashboard', component: CompanyDashboardComponent,},
   {path:'companies/:id/dashboard/job_applications/:code',component:CompanyJobOfferApplicantComponentComponent},
   {path:'companies/code_validation', component: CodeValidationComponent},
   {path:'applicant/login', component: ApplicantLoginComponent},
   {path:'applicant/sing_up', component: ApplicantLoginComponent},
   {path: 'admin', component: AdminJobOffersComponent},
-  // {path: "", redirectTo: "/job-offers", pathMatch: "full"},
-  // { path: '**', redirectTo: '/job-offers', pathMatch: 'full' }
+  // {path:'', component: JobOffersComponent},
+  {path: "", redirectTo: "/job_offers", pathMatch: "full"},
+  { path: '**', redirectTo: '/job_offers', pathMatch: 'full' }
 
 ];
 

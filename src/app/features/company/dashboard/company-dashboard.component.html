@@ -8,12 +8,67 @@
       <app-job-offer-card
         [isCompany]="true"
         *ngFor="let jobOffer of jobOffers"
-        [jobOffer]="jobOffer"
-      >
+        [jobOffer]="jobOffer" >
       </app-job-offer-card>
-      <app-pagination
+      <app-pagination></app-pagination>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+           aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="jobOfferForm" (ngSubmit)="handleJobOfferFormSubmit(jobOfferForm)">
+                <div class="form-group">
+                  <label for="title" class="col-form-label">Title:</label>
+                  <input type="text" class="form-control" id="title" formControlName="title" required>
+                </div>
 
-      ></app-pagination>
+                <div class="form-group">
+                  <label for="description" class="col-form-label">Description:</label>
+                  <textarea class="form-control" id="description" formControlName="description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="salary" class="col-form-label">Salary:</label>
+                  <input type="number" class="form-control" id="salary" formControlName="salary" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="location" class="col-form-label">Location:</label>
+                  <input type="text" class="form-control" id="location" formControlName="location" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contract" class="col-form-label">Contract:</label>
+                  <select class="form-control" id="contract" formControlName="contract" required>
+                    <option value="full-time">Full Time</option>
+                    <option value="part-time">Part Time</option>
+                    <!-- Add more options based on your Contract enum or type -->
+                  </select>
+                </div>
+
+                <div class="form-group mb-2">
+                  <label for="education" class="col-form-label">Education:</label>
+                  <input type="text" class="form-control" id="education" formControlName="education" required>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">
+                    Submit new offer
+                  </button>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
