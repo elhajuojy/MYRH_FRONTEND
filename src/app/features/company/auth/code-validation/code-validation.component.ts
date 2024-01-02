@@ -49,6 +49,7 @@ export class CodeValidationComponent {
 
   }
   handleResendCode() {
+    // console.log(this.router.snapshot.queryParams["login"])
     this.companyService.sendCodeValidation(this.router.snapshot.queryParams["login"]).subscribe({
       next:(data)=>{
         console.log(data)

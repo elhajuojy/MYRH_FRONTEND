@@ -47,11 +47,17 @@ export class JobOfferApplyFormComponent implements OnInit {
 
     this.jobOfferId = this.router.snapshot.params["id"];
   }
-  handleApplaySubmit(form:FormGroup) {
+  handelFileInput(event:any) {
+
+    this.jobOfferApplyFrom.value.resume = event.target.files[0];
+    console.log(this.jobOfferApplyFrom.value.resume)
+    console.log(typeof this.jobOfferApplyFrom.value.resume)
+  }
+  handleApplaySubmit(form:FormGroup,event:any) {
     //ADD jobOfferId: this.jobOfferId = this.router.snapshot.params["id"] to the form
     form.value.jobOfferId = this.jobOfferId ? this.router.snapshot.params["id"] : -1;
+    form.value.resume = this.jobOfferApplyFrom.value.resume;
 
-    console.log(form.value)
     //: SEND DATA TO BACKEND WITH ID OF JOB OFFER WHICH BE INCLUDED ON THE URL PARAMS
     if (form.invalid) {
       throw new Error("Form is invalid")
@@ -61,6 +67,7 @@ export class JobOfferApplyFormComponent implements OnInit {
     }
 
     const jobApplicationRequest: JobApplicationRequest = form.value as JobApplicationRequest;
+    console.log(jobApplicationRequest)
     //: WHEN I SEND DATA TO BACKEND I THE OBJECT IS NULL AND NOT VALIDATED ??
     this.jobApplicationService.applyToJob(jobApplicationRequest).subscribe(
       {

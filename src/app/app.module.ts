@@ -33,6 +33,9 @@ import {ApplicantLoginComponent} from "./features/applicant/auth/login/applicant
 import {CodeValidationComponent} from "./features/company/auth/code-validation/code-validation.component";
 import { CompanyJobOfferApplicantComponentComponent } from './features/company/company-job-offer-applicant-component/company-job-offer-applicant-component.component';
 import { JobOfferApplicationCardComponent } from './shared/job-offer-application-card/job-offer-application-card.component';
+import { StoreModule } from '@ngrx/store';
+import {jobOfferReducer} from "./store/job-offer.reducer";
+import {HomeComponent} from "./features/home/home.component";
 
 @NgModule({
   declarations: [
@@ -43,6 +46,7 @@ import { JobOfferApplicationCardComponent } from './shared/job-offer-application
     ApplicantLoginComponent,
     JobOfferCardComponent,
     JobOffersComponent,
+    HomeComponent,
     JobOfferLayoutComponent,
     JobOfferDetailComponent,
     AdminLayoutComponent,
@@ -71,7 +75,10 @@ import { JobOfferApplicationCardComponent } from './shared/job-offer-application
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AngularToastifyModule
+    AngularToastifyModule,
+    StoreModule.forRoot({
+      jobOffers: jobOfferReducer
+    }, {})
   ],
   providers: [],
   bootstrap: [

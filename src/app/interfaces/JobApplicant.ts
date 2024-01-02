@@ -32,8 +32,8 @@ export interface JobApplicationRequest{
   education: string;
   experience: string;
   educationLevel: EducationLevel;
-  resume: File;
-  coverLetter: File;
+  resume: File | undefined;
+  coverLetter: string;
   jobOfferId: number;
 }
 

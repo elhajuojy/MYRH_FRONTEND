@@ -27,7 +27,7 @@ export class JobApplicationService {
     formData.append('email',jobApplicationRequest.email)
     formData.append('phone',jobApplicationRequest.phone)
     //TODO: ADD RESUME TO FORM DATA
-    // formData.append('resume',jobApplicationRequest.resume)
+    formData.append('resume',jobApplicationRequest.resume as File)
     formData.append('coverLetter',jobApplicationRequest.coverLetter)
     formData.append('address',jobApplicationRequest.address)
     formData.append('education',jobApplicationRequest.education)

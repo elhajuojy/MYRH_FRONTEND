@@ -6,6 +6,7 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 import {ToastService} from "angular-toastify";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Subscription} from "rxjs";
+import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'app-job-offers',
@@ -25,6 +26,7 @@ export class JobOffersComponent  implements OnInit, OnDestroy{
     private jobOfferStore:JobOffersStore,
     private jobOfferService:JobOfferService,
     private _toastService: ToastService,
+    private store:Store,
     private router :Router,
     private activatedRoute:ActivatedRoute) {
   }
@@ -33,9 +35,6 @@ export class JobOffersComponent  implements OnInit, OnDestroy{
         this.paramsSubscription.unsubscribe();
   }
 
-  // onPageChange(page:number){
-  //   this.getJobOffers(page);
-  // }
 
   ngOnInit(): void {
     this.paramsSubscription = this.activatedRoute.queryParams.subscribe(params => {

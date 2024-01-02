@@ -1,5 +1,6 @@
 <form
-  [formGroup]="jobOfferApplyFrom" (ngSubmit)="handleApplaySubmit(jobOfferApplyFrom)"
+  [formGroup]="jobOfferApplyFrom" (ngSubmit)="handleApplaySubmit(jobOfferApplyFrom,$event)"
+  enctype="multipart/form-data"
 >
 
   <div class="row gap-3 ">
@@ -45,7 +46,9 @@
   <div class="row mb-3">
     <div class="mb-3 col ">
       <label class="form-label" for="resume">Upload your resume <span class="text-danger">*</span></label>
-      <input type="file" class="form-control form-control-lg" id="resume" formControlName="resume">
+      <input type="file"
+             (change)="handelFileInput($event)"
+             class="form-control form-control-lg" id="resume" formControlName="resume">
     </div>
   </div>
   <div class="input-group">
